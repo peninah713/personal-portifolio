@@ -1,0 +1,197 @@
+/* General Styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Soft light background */
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6c5ce7; /* Attractive purple */
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f8a5c2; /* Light pink on hover */
+}
+
+/* Profile Section */
+.profile {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 24px;
+    color: #6c5ce7; /* Matching color */
+}
+
+/* About Section */
+.about-section, .skills, .services, .projects {
+    margin: 40px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 28px;
+    border-bottom: 2px solid #6c5ce7;
+    padding-bottom: 10px;
+}
+
+/* Skills Section */
+.skills ul, .services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li, .services li {
+    background: #e8e8e8; /* Light grey for list items */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project h3 {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.project p {
+    margin: 10px;
+}
+
+/* Links */
+.github-link, .live-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    background: #6c5ce7; /* Match with header */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.github-link:hover, .live-link:hover {
+    background: #f8a5c2; /* Light pink on hover */
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #6c5ce7;
+    color: white;
+    position: relative;
+}
+
+.footer-content {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
