@@ -152,6 +152,72 @@ footer { background:var(--dark-light); padding:2rem 0; text-align:center; border
   .experience-item { grid-template-columns:1fr; }
   .exp-icon { display:none; }
   .cv-banner { flex-direction:column; text-align:center; }
+  #designs {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.design-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+}
+
+.project-tech {
+  margin-top: 10px;
+}
+
+.tech-tag {
+  display: inline-block;
+  background: #eee;
+  padding: 5px 10px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.btn-live {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ee0979;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
 }
 </style>
 </head>
@@ -314,59 +380,84 @@ footer { background:var(--dark-light); padding:2rem 0; text-align:center; border
   <div class="container">
     <div class="section-header">
       <h2>Graphic <span class="gradient-text">Design Work</span></h2>
-      <p>Creative work using Adobe Photoshop, Illustrator, InDesign &amp; Canva</p>
+      <p>Creative work using Adobe Photoshop, Illustrator, InDesign & Canva</p>
     </div>
+
     <div class="projects-grid">
 
+      <!-- Brand Identity -->
       <div class="project-card">
-        <div class="design-placeholder">
-          <i class="fas fa-image"></i>
-          <span>📌 <strong>Add your design here</strong><br>Replace with a Brand Identity / Logo screenshot</span>
+        <div class="design-image">
+          <img src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960" alt="Brand Identity Design">
         </div>
         <div class="project-content">
           <h3>Brand Identity Package</h3>
           <p>Complete brand identity including logo design, colour palette, and brand guidelines. Created using Adobe Illustrator.</p>
-          <div class="project-tech"><span class="tech-tag">Logo Design</span><span class="tech-tag">Branding</span><span class="tech-tag">Illustrator</span></div>
-          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
+          <div class="project-tech">
+            <span class="tech-tag">Logo Design</span>
+            <span class="tech-tag">Branding</span>
+            <span class="tech-tag">Illustrator</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-live">View Project</a>
+          </div>
         </div>
       </div>
 
+      <!-- Social Media -->
       <div class="project-card">
-        <div class="design-placeholder">
-          <i class="fas fa-photo-video"></i>
-          <span>📌 <strong>Add your design here</strong><br>Replace with Social Media Graphics screenshot</span>
+        <div class="design-image">
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113" alt="Social Media Graphics">
         </div>
         <div class="project-content">
           <h3>Social Media Campaign Graphics</h3>
           <p>Cohesive social media graphics and templates for Instagram, Facebook, and Twitter marketing campaigns.</p>
-          <div class="project-tech"><span class="tech-tag">Social Media</span><span class="tech-tag">Canva</span><span class="tech-tag">Photoshop</span></div>
-          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
+          <div class="project-tech">
+            <span class="tech-tag">Social Media</span>
+            <span class="tech-tag">Canva</span>
+            <span class="tech-tag">Photoshop</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-live">View Project</a>
+          </div>
         </div>
       </div>
 
+      <!-- Poster -->
       <div class="project-card">
-        <div class="design-placeholder">
-          <i class="fas fa-file-image"></i>
-          <span>📌 <strong>Add your design here</strong><br>Replace with a Poster / Flyer / Print design</span>
+        <div class="design-image">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="Poster Design">
         </div>
         <div class="project-content">
-          <h3>Event Poster &amp; Print Design</h3>
+          <h3>Event Poster & Print Design</h3>
           <p>Eye-catching event posters and promotional materials for conferences and community events using InDesign.</p>
-          <div class="project-tech"><span class="tech-tag">Poster Design</span><span class="tech-tag">Typography</span><span class="tech-tag">InDesign</span></div>
-          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
+          <div class="project-tech">
+            <span class="tech-tag">Poster Design</span>
+            <span class="tech-tag">Typography</span>
+            <span class="tech-tag">InDesign</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-live">View Project</a>
+          </div>
         </div>
       </div>
 
+      <!-- Training -->
       <div class="project-card">
-        <div class="design-placeholder">
-          <i class="fas fa-palette"></i>
-          <span>📌 <strong>Add your design here</strong><br>e.g. Training slides, infographic, or UI mockup</span>
+        <div class="design-image">
+          <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b" alt="Training Materials">
         </div>
         <div class="project-content">
           <h3>Training Visual Materials</h3>
           <p>Designed engaging slides, handouts, and visual aids for digital skills training programmes and workshops.</p>
-          <div class="project-tech"><span class="tech-tag">Instructional Design</span><span class="tech-tag">Canva</span><span class="tech-tag">PowerPoint</span></div>
-          <div class="project-links"><a href="#" class="btn-live"><i class="fas fa-external-link-alt"></i> Add Link</a></div>
+          <div class="project-tech">
+            <span class="tech-tag">Instructional Design</span>
+            <span class="tech-tag">Canva</span>
+            <span class="tech-tag">PowerPoint</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-live">View Project</a>
+          </div>
         </div>
       </div>
 
