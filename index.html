@@ -140,6 +140,40 @@
     .cta-buttons { justify-content: center; }
     .profile-wrapper { margin: 0 auto; }
   }
+  /* --- UPDATED DESIGN SECTION STYLES --- */
+
+/* This makes the grid denser for the design section */
+#designs .projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* This forces the images to stay within a specific height */
+#designs .project-img-wrapper {
+  height: 250px; /* Adjust this to make images smaller or larger */
+  background: #000; /* Black background for transparent PNGs */
+}
+
+#designs .project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 'contain' ensures the whole graphic is visible without cropping */
+  padding: 10px; /* Adds a little breathing room around your graphics */
+}
+
+/* Makes the content area below the design image smaller */
+#designs .project-content {
+  padding: 1.2rem;
+}
+
+#designs .project-content h3 {
+  font-size: 1.1rem;
+}
+
+#designs .project-content p {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
 </style>
 </head>
 <body>
