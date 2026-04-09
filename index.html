@@ -3,844 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peninah John - Web Developer, Designer & Digital Trainer</title>
+<title>Peninah Mutheu John - ICT Trainer | Web Developer | Graphic Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #8b5cf6;
-  --accent: #ec4899;
-  --dark: #0f172a;
-  --dark-light: #1e293b;
-  --gray: #64748b;
-  --light: #f1f5f9;
-  --white: #ffffff;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--dark);
-  color: var(--light);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Navigation */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-}
-
-nav .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-nav ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-nav a {
-  color: var(--light);
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--primary);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Hero Section */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent);
-  border-radius: 50%;
-  top: -250px;
-  right: -250px;
-  animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-text h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.hero-text h2 {
-  font-size: 1.5rem;
-  color: var(--gray);
-  margin-bottom: 2rem;
-  font-weight: 400;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: var(--gray);
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-}
-
-.btn-secondary {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.hero-image {
-  position: relative;
-}
-
-.profile-wrapper {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-.profile-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: -20px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: morph 8s ease-in-out infinite;
-  opacity: 0.3;
-  filter: blur(20px);
-}
-
-@keyframes morph {
-  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: morph 8s ease-in-out infinite;
-  position: relative;
-  z-index: 1;
-}
-
-/* Section Styles */
-section {
-  padding: 6rem 0;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  color: var(--gray);
-  font-size: 1.1rem;
-}
-
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-card {
-  background: var(--dark-light);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-}
-
-.skill-card i {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.skill-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: var(--dark-light);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-}
-
-.project-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-.project-content p {
-  color: var(--gray);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.tech-tag {
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.project-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.project-links a {
-  flex: 1;
-  text-align: center;
-  padding: 0.6rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.project-links .btn-github {
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
-}
-
-.project-links .btn-github:hover {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.project-links .btn-live {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.project-links .btn-live:hover {
-  background: var(--primary-dark);
-}
-
-/* Services */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.service-card {
-  background: var(--dark-light);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s;
-}
-
-.service-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-5px);
-}
-
-.service-card i {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.service-card p {
-  color: var(--gray);
-  line-height: 1.6;
-}
-
-/* =============================================
-   TRAINING SECTION — NEW
-   ============================================= */
-
-#training {
-  background: linear-gradient(180deg, var(--dark) 0%, rgba(99,102,241,0.03) 50%, var(--dark) 100%);
-}
-
-/* Stats bar */
-.training-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-
-.stat-card {
-  background: var(--dark-light);
-  border: 1px solid rgba(99, 102, 241, 0.15);
-  border-radius: 12px;
-  padding: 1.8rem 1rem;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.stat-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
-}
-
-.stat-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  color: var(--gray);
-  font-size: 0.9rem;
-}
-
-/* Training areas */
-.training-areas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.training-area-card {
-  background: var(--dark-light);
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.training-area-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  transform: scaleX(0);
-  transition: transform 0.3s;
-}
-
-.training-area-card:hover::before {
-  transform: scaleX(1);
-}
-
-.training-area-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.15);
-}
-
-.training-area-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(99, 102, 241, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.2rem;
-}
-
-.training-area-icon i {
-  font-size: 1.6rem;
-  color: var(--primary);
-}
-
-.training-area-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-}
-
-.training-area-card p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-}
-
-.tools-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.tool-tag {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--secondary);
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-}
-
-/* Training experiences */
-.training-experiences {
-  margin-bottom: 4rem;
-}
-
-.training-experiences h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.experience-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.experience-item {
-  background: var(--dark-light);
-  border-radius: 14px;
-  padding: 1.8rem 2rem;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  transition: all 0.3s;
-}
-
-.experience-item:hover {
-  border-color: var(--primary);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.12);
-}
-
-.exp-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.exp-icon i {
-  font-size: 1.2rem;
-  color: var(--white);
-}
-
-.exp-content h4 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-}
-
-.exp-meta {
-  color: var(--primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.exp-meta span {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.exp-content p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.exp-outcomes {
-  margin-top: 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.outcome-tag {
-  background: rgba(236, 72, 153, 0.1);
-  color: var(--accent);
-  padding: 0.2rem 0.7rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  border: 1px solid rgba(236, 72, 153, 0.2);
-}
-
-/* Testimonials */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: var(--dark-light);
-  border-radius: 14px;
-  padding: 2rem;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s;
-  position: relative;
-}
-
-.testimonial-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-5px);
-}
-
-.quote-icon {
-  font-size: 3rem;
-  color: var(--primary);
-  opacity: 0.3;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  font-family: Georgia, serif;
-}
-
-.testimonial-card p {
-  color: var(--light);
-  font-style: italic;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  font-size: 0.97rem;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  color: var(--white);
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.author-info strong {
-  display: block;
-  font-size: 0.95rem;
-}
-
-.author-info span {
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-
-.star-rating {
-  color: #f59e0b;
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
-}
-
-/* Training CTA banner */
-.training-cta {
-  margin-top: 4rem;
-  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.training-cta h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
-}
-
-.training-cta p {
-  color: var(--gray);
-  margin-bottom: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Contact Section */
-.contact-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin: 3rem 0;
-  flex-wrap: wrap;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact-item i {
-  font-size: 2rem;
-  color: var(--primary);
-}
-
-.contact-item a {
-  color: var(--light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-item a:hover {
-  color: var(--primary);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.social-links a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  transition: all 0.3s;
-}
-
-.social-links a:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-3px);
-}
-
-/* Footer */
-footer {
-  background: var(--dark-light);
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid rgba(99, 102, 241, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .profile-wrapper {
-    width: 300px;
-    height: 300px;
-  }
-
-  nav ul {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-buttons {
-    justify-content: center;
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr;
-  }
-
-  .exp-icon {
-    display: none;
-  }
+  --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #8b5cf6;
+  --accent: #ec4899; --dark: #0f172a; --dark-light: #1e293b;
+  --gray: #64748b; --light: #f1f5f9; --white: #ffffff;
+}
+body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--light); line-height: 1.6; overflow-x: hidden; }
+.gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+nav { position: fixed; top: 0; width: 100%; background: rgba(15,23,42,0.9); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; border-bottom: 1px solid rgba(99,102,241,0.1); }
+nav .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--white); }
+nav ul { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+nav a { color: var(--light); text-decoration: none; transition: color 0.3s; font-weight: 500; font-size: 0.9rem; }
+nav a:hover { color: var(--primary); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(99,102,241,0.15), transparent); border-radius: 50%; top: -250px; right: -250px; animation: float 8s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-20px) rotate(5deg);} }
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+.hero-text h1 { font-family: 'Space Grotesk', sans-serif; font-size: 3.2rem; margin-bottom: 1rem; line-height: 1.2; }
+.hero-text h2 { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; font-weight: 400; }
+.hero-text p { font-size: 1rem; color: var(--gray); margin-bottom: 2rem; line-height: 1.8; }
+.cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { padding: 0.85rem 1.6rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(99,102,241,0.4); }
+.btn-secondary { border: 2px solid var(--primary); color: var(--primary); }
+.btn-secondary:hover { background: var(--primary); color: var(--white); }
+.btn-accent { background: linear-gradient(135deg, var(--secondary), var(--accent)); color: var(--white); }
+.btn-accent:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(236,72,153,0.3); }
+.profile-wrapper { position: relative; width: 380px; height: 380px; margin: 0 auto; }
+.profile-wrapper::before { content: ''; position: absolute; inset: -20px; background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)); border-radius: 30% 70% 70% 30%/30% 30% 70% 70%; animation: morph 8s ease-in-out infinite; opacity: 0.3; filter: blur(20px); }
+@keyframes morph { 0%,100%{border-radius:30% 70% 70% 30%/30% 30% 70% 70%;} 25%{border-radius:58% 42% 75% 25%/76% 46% 54% 24%;} 50%{border-radius:50% 50% 33% 67%/55% 27% 73% 45%;} 75%{border-radius:33% 67% 58% 42%/63% 68% 32% 37%;} }
+.profile-img { width:100%; height:100%; object-fit:cover; border-radius:30% 70% 70% 30%/30% 30% 70% 70%; animation:morph 8s ease-in-out infinite; position:relative; z-index:1; }
+section { padding: 6rem 0; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; }
+.section-header p { color: var(--gray); font-size: 1.05rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px,1fr)); gap: 1.5rem; }
+.skill-card { background: var(--dark-light); padding: 1.8rem 1rem; border-radius: 12px; text-align: center; border: 1px solid rgba(99,102,241,0.1); transition: all 0.3s; }
+.skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(99,102,241,0.2); }
+.skill-card i { font-size: 2rem; color: var(--primary); margin-bottom: 0.8rem; }
+.skill-card h3 { font-size: 0.85rem; font-weight: 600; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px,1fr)); gap: 2rem; }
+.project-card { background: var(--dark-light); border-radius: 12px; overflow: hidden; border: 1px solid rgba(99,102,241,0.1); transition: all 0.3s; }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(99,102,241,0.2); }
+.project-img { width:100%; height:210px; object-fit:cover; background:linear-gradient(135deg,var(--primary),var(--secondary)); display:block; }
+.design-placeholder { width:100%; height:210px; background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(139,92,246,0.07)); border-bottom:2px dashed rgba(99,102,241,0.3); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.7rem; color:var(--gray); transition:all 0.3s; padding:1rem; }
+.design-placeholder i { font-size:2.2rem; color:rgba(99,102,241,0.4); }
+.design-placeholder span { font-size:0.82rem; text-align:center; line-height:1.5; }
+.project-card:hover .design-placeholder { border-color:var(--primary); background:rgba(99,102,241,0.08); }
+.project-content { padding: 1.4rem; }
+.project-content h3 { font-size:1.1rem; margin-bottom:0.5rem; font-family:'Space Grotesk',sans-serif; }
+.project-content p { color:var(--gray); margin-bottom:0.9rem; line-height:1.6; font-size:0.9rem; }
+.project-tech { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.9rem; }
+.tech-tag { background:rgba(99,102,241,0.1); color:var(--primary); padding:0.22rem 0.65rem; border-radius:20px; font-size:0.8rem; }
+.project-links { display:flex; gap:0.8rem; }
+.project-links a { flex:1; text-align:center; padding:0.55rem; border-radius:7px; text-decoration:none; font-weight:600; transition:all 0.3s; font-size:0.85rem; }
+.btn-github { background:rgba(99,102,241,0.1); color:var(--primary); }
+.btn-github:hover { background:var(--primary); color:var(--white); }
+.btn-live { background:var(--primary); color:var(--white); }
+.btn-live:hover { background:var(--primary-dark); }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+.service-card { background:var(--dark-light); padding:2rem; border-radius:12px; border:1px solid rgba(99,102,241,0.1); transition:all 0.3s; }
+.service-card:hover { border-color:var(--primary); transform:translateY(-5px); }
+.service-card i { font-size:2.2rem; color:var(--primary); margin-bottom:1rem; }
+.service-card h3 { font-size:1.1rem; margin-bottom:0.5rem; }
+.service-card p { color:var(--gray); line-height:1.6; font-size:0.92rem; }
+#training { background:linear-gradient(180deg,var(--dark) 0%,rgba(99,102,241,0.03) 50%,var(--dark) 100%); }
+.training-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:1.5rem; margin-bottom:4rem; }
+.stat-card { background:var(--dark-light); border:1px solid rgba(99,102,241,0.15); border-radius:12px; padding:1.8rem 1rem; text-align:center; transition:all 0.3s; }
+.stat-card:hover { border-color:var(--primary); transform:translateY(-4px); box-shadow:0 10px 30px rgba(99,102,241,0.15); }
+.stat-number { font-family:'Space Grotesk',sans-serif; font-size:2.2rem; font-weight:700; background:linear-gradient(135deg,var(--primary),var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:block; line-height:1; margin-bottom:0.5rem; }
+.stat-label { color:var(--gray); font-size:0.85rem; }
+.training-areas { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-bottom:4rem; }
+.training-area-card { background:var(--dark-light); border-radius:16px; padding:2rem; border:1px solid rgba(99,102,241,0.1); transition:all 0.3s; position:relative; overflow:hidden; }
+.training-area-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--primary),var(--accent)); transform:scaleX(0); transition:transform 0.3s; }
+.training-area-card:hover::before { transform:scaleX(1); }
+.training-area-card:hover { border-color:var(--primary); transform:translateY(-6px); box-shadow:0 15px 35px rgba(99,102,241,0.15); }
+.training-area-icon { width:52px; height:52px; border-radius:13px; background:rgba(99,102,241,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; }
+.training-area-icon i { font-size:1.5rem; color:var(--primary); }
+.training-area-card h3 { font-family:'Space Grotesk',sans-serif; font-size:1.05rem; margin-bottom:0.6rem; }
+.training-area-card p { color:var(--gray); font-size:0.88rem; line-height:1.7; margin-bottom:1.1rem; }
+.tools-list { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.tool-tag { background:rgba(139,92,246,0.1); color:var(--secondary); padding:0.22rem 0.65rem; border-radius:20px; font-size:0.76rem; font-weight:500; border:1px solid rgba(139,92,246,0.2); }
+.training-experiences { margin-bottom:4rem; }
+.training-experiences h3 { font-family:'Space Grotesk',sans-serif; font-size:1.5rem; margin-bottom:2rem; text-align:center; }
+.experience-timeline { display:flex; flex-direction:column; gap:1.5rem; max-width:860px; margin:0 auto; }
+.experience-item { background:var(--dark-light); border-radius:14px; padding:1.8rem 2rem; border:1px solid rgba(99,102,241,0.1); display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:start; transition:all 0.3s; }
+.experience-item:hover { border-color:var(--primary); box-shadow:0 8px 25px rgba(99,102,241,0.12); }
+.exp-icon { width:46px; height:46px; border-radius:11px; background:linear-gradient(135deg,var(--primary),var(--secondary)); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.exp-icon i { font-size:1.1rem; color:var(--white); }
+.exp-content h4 { font-family:'Space Grotesk',sans-serif; font-size:1rem; margin-bottom:0.3rem; }
+.exp-meta { color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:0.6rem; display:flex; gap:1rem; flex-wrap:wrap; }
+.exp-meta span { display:flex; align-items:center; gap:0.3rem; }
+.exp-content p { color:var(--gray); font-size:0.9rem; line-height:1.7; }
+.exp-outcomes { margin-top:0.8rem; display:flex; flex-wrap:wrap; gap:0.4rem; }
+.outcome-tag { background:rgba(236,72,153,0.1); color:var(--accent); padding:0.2rem 0.65rem; border-radius:20px; font-size:0.76rem; border:1px solid rgba(236,72,153,0.2); }
+.education-section { margin-bottom:4rem; }
+.education-section h3 { font-family:'Space Grotesk',sans-serif; font-size:1.5rem; margin-bottom:2rem; text-align:center; }
+.education-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.5rem; max-width:860px; margin:0 auto; }
+.edu-card { background:var(--dark-light); border-radius:14px; padding:1.8rem; border:1px solid rgba(99,102,241,0.1); transition:all 0.3s; }
+.edu-card:hover { border-color:var(--primary); transform:translateY(-4px); }
+.edu-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(99,102,241,0.1); color:var(--primary); padding:0.35rem 0.8rem; border-radius:20px; font-size:0.8rem; font-weight:600; margin-bottom:1rem; }
+.edu-card h4 { font-family:'Space Grotesk',sans-serif; font-size:0.98rem; margin-bottom:0.3rem; }
+.edu-card .edu-school { color:var(--primary); font-size:0.83rem; font-weight:600; margin-bottom:0.3rem; }
+.edu-card .edu-date { color:var(--gray); font-size:0.8rem; margin-bottom:0.8rem; }
+.edu-card p { color:var(--gray); font-size:0.86rem; line-height:1.6; }
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:2rem; }
+.testimonial-card { background:var(--dark-light); border-radius:14px; padding:1.8rem; border:1px solid rgba(99,102,241,0.1); transition:all 0.3s; }
+.testimonial-card:hover { border-color:var(--primary); transform:translateY(-5px); }
+.quote-icon { font-size:2.8rem; color:var(--primary); opacity:0.3; line-height:1; margin-bottom:0.4rem; font-family:Georgia,serif; }
+.testimonial-card p { color:var(--light); font-style:italic; line-height:1.8; margin-bottom:1.3rem; font-size:0.92rem; }
+.testimonial-author { display:flex; align-items:center; gap:0.8rem; }
+.author-avatar { width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--white); font-size:0.9rem; flex-shrink:0; }
+.author-info strong { display:block; font-size:0.9rem; }
+.author-info span { font-size:0.8rem; color:var(--gray); }
+.star-rating { color:#f59e0b; font-size:0.88rem; margin-bottom:0.7rem; }
+.cv-banner { background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(236,72,153,0.08)); border:1px solid rgba(99,102,241,0.2); border-radius:16px; padding:2rem 2.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-top:4rem; }
+.cv-banner-text h3 { font-family:'Space Grotesk',sans-serif; font-size:1.2rem; margin-bottom:0.3rem; }
+.cv-banner-text p { color:var(--gray); font-size:0.88rem; }
+.cv-banner-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+.training-cta { margin-top:3rem; background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(139,92,246,0.1)); border:1px solid rgba(99,102,241,0.25); border-radius:20px; padding:3rem 2rem; text-align:center; }
+.training-cta h3 { font-family:'Space Grotesk',sans-serif; font-size:1.8rem; margin-bottom:0.8rem; }
+.training-cta p { color:var(--gray); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto; }
+.contact-content { max-width:800px; margin:0 auto; text-align:center; }
+.contact-info { display:flex; justify-content:center; gap:2.5rem; margin:3rem 0; flex-wrap:wrap; }
+.contact-item { display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+.contact-item i { font-size:1.8rem; color:var(--primary); }
+.contact-item a, .contact-item span { color:var(--light); text-decoration:none; transition:color 0.3s; font-size:0.95rem; }
+.contact-item a:hover { color:var(--primary); }
+.social-links { display:flex; justify-content:center; gap:1rem; margin-top:2rem; }
+.social-links a { width:47px; height:47px; border-radius:50%; background:rgba(99,102,241,0.1); color:var(--primary); display:flex; align-items:center; justify-content:center; font-size:1.1rem; transition:all 0.3s; }
+.social-links a:hover { background:var(--primary); color:var(--white); transform:translateY(-3px); }
+footer { background:var(--dark-light); padding:2rem 0; text-align:center; border-top:1px solid rgba(99,102,241,0.1); }
+@media (max-width:768px) {
+  .hero-content { grid-template-columns:1fr; text-align:center; }
+  .hero-text h1 { font-size:2rem; }
+  .profile-wrapper { width:260px; height:260px; }
+  nav ul { gap:0.7rem; font-size:0.8rem; }
+  .projects-grid { grid-template-columns:1fr; }
+  .cta-buttons { justify-content:center; }
+  .experience-item { grid-template-columns:1fr; }
+  .exp-icon { display:none; }
+  .cv-banner { flex-direction:column; text-align:center; }
 }
 </style>
 </head>
@@ -866,27 +177,19 @@ footer {
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Hi, I'm <span class="gradient-text">Peninah John</span></h1>
-        <h2>Web Developer, Designer & Digital Skills Trainer</h2>
-        <p>I craft beautiful, functional digital experiences — and I empower others to do the same. With 5+ years of experience, I combine hands-on technical expertise with a passion for teaching digital skills and creative tools.</p>
+        <h1>Hi, I'm <span class="gradient-text">Peninah Mutheu John</span></h1>
+        <h2>Senior Digital Skills Trainer &nbsp;·&nbsp; ICT Educator &nbsp;·&nbsp; Web Developer</h2>
+        <p>Dedicated ICT Trainer with 3+ years of hands-on experience educating youth in digital skills, programming, and creative technology tools. BSc Computer Science — passionate about using technology education as a tool for youth empowerment and socio-economic transformation.</p>
         <div class="cta-buttons">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fas fa-rocket"></i> View My Work
-          </a>
-          <a href="#training" class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
-            <i class="fas fa-chalkboard-teacher"></i> Training Portfolio
-          </a>
-          <a href="peninah john.pdf" download class="btn btn-secondary">
-            <i class="fas fa-download"></i> Download CV
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <i class="fas fa-envelope"></i> Get In Touch
-          </a>
+          <a href="#training" class="btn btn-accent"><i class="fas fa-chalkboard-teacher"></i> Training Portfolio</a>
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> My Projects</a>
+          <a href="Peninah_Mutheu_John_CV_Senior_digital_Traineer.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
         </div>
       </div>
       <div class="hero-image">
         <div class="profile-wrapper">
-          <img src="pesh.jpg.jpeg" alt="Peninah John" class="profile-img">
+          <img src="pesh.jpg.jpeg" alt="Peninah Mutheu John" class="profile-img">
         </div>
       </div>
     </div>
@@ -898,27 +201,27 @@ footer {
   <div class="container">
     <div class="section-header">
       <h2>Skills & <span class="gradient-text">Expertise</span></h2>
-      <p>Technologies and tools I work with</p>
+      <p>Technologies, tools, and competencies I bring to every engagement</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
-      <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+      <div class="skill-card"><i class="fas fa-chalkboard-teacher"></i><h3>Digital Training</h3></div>
+      <div class="skill-card"><i class="fas fa-sitemap"></i><h3>Curriculum Design</h3></div>
+      <div class="skill-card"><i class="fab fa-adobe"></i><h3>Adobe Photoshop</h3></div>
+      <div class="skill-card"><i class="fab fa-adobe"></i><h3>Adobe Illustrator</h3></div>
+      <div class="skill-card"><i class="fas fa-paint-brush"></i><h3>Canva</h3></div>
+      <div class="skill-card"><i class="fab fa-figma"></i><h3>Figma</h3></div>
+      <div class="skill-card"><i class="fab fa-google"></i><h3>Google Workspace</h3></div>
+      <div class="skill-card"><i class="fas fa-file-word"></i><h3>MS Office Suite</h3></div>
+      <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5 / CSS3</h3></div>
       <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+      <div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3></div>
       <div class="skill-card"><i class="fab fa-react"></i><h3>React</h3></div>
       <div class="skill-card"><i class="fab fa-php"></i><h3>PHP</h3></div>
       <div class="skill-card"><i class="fas fa-database"></i><h3>MySQL</h3></div>
-      <div class="skill-card"><i class="fab fa-laravel"></i><h3>Laravel</h3></div>
-      <div class="skill-card"><i class="fas fa-wind"></i><h3>Tailwind CSS</h3></div>
-      <div class="skill-card"><i class="fab fa-bootstrap"></i><h3>Bootstrap</h3></div>
-      <div class="skill-card"><i class="fas fa-code"></i><h3>API Integration</h3></div>
       <div class="skill-card"><i class="fas fa-search"></i><h3>SEO</h3></div>
-      <div class="skill-card"><i class="fas fa-laptop-code"></i><h3>Full Stack Dev</h3></div>
-      <div class="skill-card"><i class="fas fa-palette"></i><h3>Graphic Design</h3></div>
-      <div class="skill-card"><i class="fab fa-adobe"></i><h3>Adobe Suite</h3></div>
-      <div class="skill-card"><i class="fab fa-figma"></i><h3>Figma</h3></div>
-      <div class="skill-card"><i class="fas fa-pen-nib"></i><h3>Logo Design</h3></div>
-      <div class="skill-card"><i class="fas fa-chalkboard-teacher"></i><h3>Digital Training</h3></div>
-      <div class="skill-card"><i class="fas fa-sitemap"></i><h3>Curriculum Design</h3></div>
+      <div class="skill-card"><i class="fas fa-bullhorn"></i><h3>Digital Marketing</h3></div>
+      <div class="skill-card"><i class="fas fa-graduation-cap"></i><h3>Adult Learning</h3></div>
+      <div class="skill-card"><i class="fas fa-laptop-code"></i><h3>Ed-Tech Tools</h3></div>
     </div>
   </div>
 </section>
@@ -928,7 +231,7 @@ footer {
   <div class="container">
     <div class="section-header">
       <h2>Featured <span class="gradient-text">Projects</span></h2>
-      <p>Recent work and live deployments</p>
+      <p>Web development work and live deployments</p>
     </div>
     <div class="projects-grid">
       <div class="project-card">
@@ -936,9 +239,7 @@ footer {
         <div class="project-content">
           <h3>Travel Planner App</h3>
           <p>A responsive travel planning application with interactive features for organizing trips and destinations.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
-          </div>
+          <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
           <div class="project-links">
             <a href="https://github.com/peninah713/TRAVEL-PLANNER" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
             <a href="https://travel-planner-omega-opal.vercel.app/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -949,10 +250,8 @@ footer {
         <img src="furniture.jpg" alt="LiveScore" class="project-img">
         <div class="project-content">
           <h3>LiveScore App</h3>
-          <p>Real-time sports score tracking application with live updates and match statistics.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">API</span>
-          </div>
+          <p>Real-time sports score tracking application with live updates and match statistics using an external API.</p>
+          <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">API</span></div>
           <div class="project-links">
             <a href="https://github.com/peninah713/livescore" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
             <a href="https://cheerful-clafoutis-5604b4.netlify.app/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -964,9 +263,7 @@ footer {
         <div class="project-content">
           <h3>REA YOU Furnitures</h3>
           <p>Full-featured e-commerce website for a furniture store with product showcase and shopping capabilities.</p>
-          <div class="project-tech">
-            <span class="tech-tag">React</span><span class="tech-tag">CSS</span><span class="tech-tag">API</span>
-          </div>
+          <div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">CSS</span><span class="tech-tag">API</span></div>
           <div class="project-links">
             <a href="https://github.com/peninah713/reayou-furnitures" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
             <a href="https://reayoufurnitures.com/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -978,9 +275,7 @@ footer {
         <div class="project-content">
           <h3>E-Gadgets Computer Shop</h3>
           <p>Collaborative e-commerce platform for computer and tech products with modern UI/UX design.</p>
-          <div class="project-tech">
-            <span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS</span>
-          </div>
+          <div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS</span></div>
           <div class="project-links">
             <a href="https://github.com/Simply-Furaha/Phase2project.git" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
             <a href="https://e-gadgets-mauve.vercel.app" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -992,9 +287,7 @@ footer {
         <div class="project-content">
           <h3>Sams Studio</h3>
           <p>Professional studio website featuring portfolio showcase and booking functionality.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
-          </div>
+          <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
           <div class="project-links">
             <a href="https://github.com/peninah713/Sams" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
             <a href="https://thunderous-wisp-9daf0b.netlify.app/" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -1004,11 +297,9 @@ footer {
       <div class="project-card">
         <img src="huduma-kenya.jpg" alt="Huduma Kenya" class="project-img">
         <div class="project-content">
-          <h3>Huduma Kenya</h3>
+          <h3>Huduma Kenya Portal</h3>
           <p>Government services portal with comprehensive information architecture and accessibility features.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
-          </div>
+          <div class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
           <div class="project-links">
             <a href="https://github.com/peninah713/huduma" target="_blank" class="btn-github"><i class="fab fa-github"></i> Code</a>
           </div>
@@ -1023,175 +314,122 @@ footer {
   <div class="container">
     <div class="section-header">
       <h2>Graphic <span class="gradient-text">Design Work</span></h2>
-      <p>Creative designs and visual branding</p>
+      <p>Creative work using Adobe Photoshop, Illustrator, InDesign &amp; Canva</p>
     </div>
     <div class="projects-grid">
+
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop" alt="Brand Identity Design" class="project-img">
+        <div class="design-placeholder">
+          <i class="fas fa-image"></i>
+          <span>📌 <strong>Add your design here</strong><br>Replace with a Brand Identity / Logo screenshot</span>
+        </div>
         <div class="project-content">
           <h3>Brand Identity Package</h3>
-          <p>Complete brand identity including logo design, color palette, and brand guidelines for clients.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Logo Design</span><span class="tech-tag">Branding</span><span class="tech-tag">Adobe Illustrator</span>
-          </div>
-          <div class="project-links">
-            <a href="https://www.behance.net" target="_blank" class="btn-live"><i class="fab fa-behance"></i> View on Behance</a>
-          </div>
+          <p>Complete brand identity including logo design, colour palette, and brand guidelines. Created using Adobe Illustrator.</p>
+          <div class="project-tech"><span class="tech-tag">Logo Design</span><span class="tech-tag">Branding</span><span class="tech-tag">Illustrator</span></div>
+          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
         </div>
       </div>
+
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Social Media Graphics" class="project-img">
+        <div class="design-placeholder">
+          <i class="fas fa-photo-video"></i>
+          <span>📌 <strong>Add your design here</strong><br>Replace with Social Media Graphics screenshot</span>
+        </div>
         <div class="project-content">
-          <h3>Social Media Campaign</h3>
-          <p>Cohesive social media graphics and templates for Instagram, Facebook, and Twitter marketing.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Social Media</span><span class="tech-tag">Canva</span><span class="tech-tag">Photoshop</span>
-          </div>
-          <div class="project-links">
-            <a href="https://www.behance.net" target="_blank" class="btn-live"><i class="fab fa-behance"></i> View Portfolio</a>
-          </div>
+          <h3>Social Media Campaign Graphics</h3>
+          <p>Cohesive social media graphics and templates for Instagram, Facebook, and Twitter marketing campaigns.</p>
+          <div class="project-tech"><span class="tech-tag">Social Media</span><span class="tech-tag">Canva</span><span class="tech-tag">Photoshop</span></div>
+          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
         </div>
       </div>
+
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1634170380000-c6645c0d3ead?w=800&h=600&fit=crop" alt="Poster Design" class="project-img">
+        <div class="design-placeholder">
+          <i class="fas fa-file-image"></i>
+          <span>📌 <strong>Add your design here</strong><br>Replace with a Poster / Flyer / Print design</span>
+        </div>
         <div class="project-content">
-          <h3>Event Poster Series</h3>
-          <p>Eye-catching event posters and promotional materials for conferences and community events.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Poster Design</span><span class="tech-tag">Typography</span><span class="tech-tag">InDesign</span>
-          </div>
-          <div class="project-links">
-            <a href="https://www.behance.net" target="_blank" class="btn-live"><i class="fab fa-behance"></i> View Portfolio</a>
-          </div>
+          <h3>Event Poster &amp; Print Design</h3>
+          <p>Eye-catching event posters and promotional materials for conferences and community events using InDesign.</p>
+          <div class="project-tech"><span class="tech-tag">Poster Design</span><span class="tech-tag">Typography</span><span class="tech-tag">InDesign</span></div>
+          <div class="project-links"><a href="#" class="btn-live"><i class="fab fa-behance"></i> Add Behance Link</a></div>
         </div>
       </div>
+
+      <div class="project-card">
+        <div class="design-placeholder">
+          <i class="fas fa-palette"></i>
+          <span>📌 <strong>Add your design here</strong><br>e.g. Training slides, infographic, or UI mockup</span>
+        </div>
+        <div class="project-content">
+          <h3>Training Visual Materials</h3>
+          <p>Designed engaging slides, handouts, and visual aids for digital skills training programmes and workshops.</p>
+          <div class="project-tech"><span class="tech-tag">Instructional Design</span><span class="tech-tag">Canva</span><span class="tech-tag">PowerPoint</span></div>
+          <div class="project-links"><a href="#" class="btn-live"><i class="fas fa-external-link-alt"></i> Add Link</a></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     TRAINING SECTION — NEW
-     ============================================= -->
+<!-- TRAINING -->
 <section id="training">
   <div class="container">
     <div class="section-header">
       <h2>Training & <span class="gradient-text">Digital Education</span></h2>
-      <p>Empowering learners with practical digital skills and creative tools</p>
+      <p>Empowering learners with practical digital skills, programming, and creative tools</p>
     </div>
 
-    <!-- Stats -->
     <div class="training-stats">
-      <div class="stat-card">
-        <span class="stat-number">200+</span>
-        <span class="stat-label">Learners Trained</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">3+</span>
-        <span class="stat-label">Years Training</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">10+</span>
-        <span class="stat-label">Courses Delivered</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">95%</span>
-        <span class="stat-label">Learner Satisfaction</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">5+</span>
-        <span class="stat-label">Curricula Designed</span>
-      </div>
+      <div class="stat-card"><span class="stat-number">100+</span><span class="stat-label">Students Trained</span></div>
+      <div class="stat-card"><span class="stat-number">3+</span><span class="stat-label">Years Training</span></div>
+      <div class="stat-card"><span class="stat-number">2</span><span class="stat-label">Training Roles</span></div>
+      <div class="stat-card"><span class="stat-number">5+</span><span class="stat-label">Curricula Designed</span></div>
+      <div class="stat-card"><span class="stat-number">BSc</span><span class="stat-label">Computer Science</span></div>
     </div>
 
-    <!-- Training Areas -->
     <div class="training-areas">
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fas fa-laptop"></i>
-        </div>
+        <div class="training-area-icon"><i class="fas fa-laptop"></i></div>
         <h3>Digital Productivity</h3>
-        <p>Training learners to work efficiently with industry-standard productivity tools for professional and workplace settings.</p>
-        <div class="tools-list">
-          <span class="tool-tag">Microsoft Office</span>
-          <span class="tool-tag">Google Workspace</span>
-          <span class="tool-tag">Email Etiquette</span>
-          <span class="tool-tag">Digital Communication</span>
-        </div>
+        <p>Training learners to work efficiently with industry-standard productivity and communication tools for professional settings.</p>
+        <div class="tools-list"><span class="tool-tag">MS Office Suite</span><span class="tool-tag">Google Workspace</span><span class="tool-tag">Google Classroom</span><span class="tool-tag">Moodle</span></div>
       </div>
-
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fab fa-adobe"></i>
-        </div>
+        <div class="training-area-icon"><i class="fab fa-adobe"></i></div>
         <h3>Creative Design Tools</h3>
-        <p>Hands-on instruction in Adobe Creative Suite and design tools — from branding basics to advanced graphic production.</p>
-        <div class="tools-list">
-          <span class="tool-tag">Adobe Photoshop</span>
-          <span class="tool-tag">Adobe Illustrator</span>
-          <span class="tool-tag">InDesign</span>
-          <span class="tool-tag">Canva</span>
-          <span class="tool-tag">Figma</span>
-        </div>
+        <p>Hands-on instruction in Adobe Creative Suite — from branding basics to advanced graphic production for real clients.</p>
+        <div class="tools-list"><span class="tool-tag">Adobe Photoshop</span><span class="tool-tag">Adobe Illustrator</span><span class="tool-tag">InDesign</span><span class="tool-tag">Canva</span><span class="tool-tag">Figma</span></div>
       </div>
-
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fas fa-bullhorn"></i>
-        </div>
+        <div class="training-area-icon"><i class="fas fa-bullhorn"></i></div>
         <h3>Digital Marketing</h3>
-        <p>Practical training in social media strategy, content creation, SEO fundamentals, and online brand management.</p>
-        <div class="tools-list">
-          <span class="tool-tag">Social Media Strategy</span>
-          <span class="tool-tag">SEO Fundamentals</span>
-          <span class="tool-tag">Content Planning</span>
-          <span class="tool-tag">Analytics</span>
-        </div>
+        <p>Practical training in social media strategy, content creation, SEO fundamentals, and freelancing readiness.</p>
+        <div class="tools-list"><span class="tool-tag">Social Media Strategy</span><span class="tool-tag">SEO Fundamentals</span><span class="tool-tag">Content Planning</span><span class="tool-tag">Gig Economy</span></div>
       </div>
-
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fas fa-code"></i>
-        </div>
-        <h3>Web & Tech Literacy</h3>
-        <p>Introducing learners to web development basics, internet literacy, and how digital systems work in everyday life.</p>
-        <div class="tools-list">
-          <span class="tool-tag">HTML & CSS Basics</span>
-          <span class="tool-tag">Internet Safety</span>
-          <span class="tool-tag">Digital Citizenship</span>
-          <span class="tool-tag">Freelancing Skills</span>
-        </div>
+        <div class="training-area-icon"><i class="fas fa-code"></i></div>
+        <h3>Programming & Web Dev</h3>
+        <p>Teaching coding fundamentals, web application development, and software engineering principles aligned with industry standards.</p>
+        <div class="tools-list"><span class="tool-tag">Python</span><span class="tool-tag">JavaScript</span><span class="tool-tag">HTML/CSS</span><span class="tool-tag">Replit</span><span class="tool-tag">GitHub Classroom</span></div>
       </div>
-
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fas fa-book-open"></i>
-        </div>
+        <div class="training-area-icon"><i class="fas fa-book-open"></i></div>
         <h3>Curriculum Development</h3>
-        <p>Designing structured, outcome-based training programs with materials, assessments, and learner engagement strategies.</p>
-        <div class="tools-list">
-          <span class="tool-tag">Lesson Planning</span>
-          <span class="tool-tag">Training Materials</span>
-          <span class="tool-tag">Adult Learning</span>
-          <span class="tool-tag">Competency-Based</span>
-        </div>
+        <p>Designing structured, competency-based programmes aligned with current industry trends and learner needs, including M&amp;E reporting.</p>
+        <div class="tools-list"><span class="tool-tag">Lesson Planning</span><span class="tool-tag">Competency-Based</span><span class="tool-tag">Adult Learning</span><span class="tool-tag">M&amp;E Reporting</span></div>
       </div>
-
       <div class="training-area-card">
-        <div class="training-area-icon">
-          <i class="fas fa-users"></i>
-        </div>
-        <h3>Facilitation & Learner Support</h3>
-        <p>Creating inclusive, engaging learning environments that adapt to diverse backgrounds and skill levels.</p>
-        <div class="tools-list">
-          <span class="tool-tag">Inclusive Teaching</span>
-          <span class="tool-tag">Hands-on Learning</span>
-          <span class="tool-tag">Mentorship</span>
-          <span class="tool-tag">Learner Assessment</span>
-        </div>
+        <div class="training-area-icon"><i class="fas fa-tools"></i></div>
+        <h3>Ed-Tech Integration</h3>
+        <p>Leveraging modern LMS platforms and interactive tools to enhance learner engagement and track progress effectively.</p>
+        <div class="tools-list"><span class="tool-tag">Moodle</span><span class="tool-tag">Canvas</span><span class="tool-tag">Kahoot</span><span class="tool-tag">Quizizz</span><span class="tool-tag">Zoom / MS Teams</span></div>
       </div>
     </div>
 
-    <!-- Training Experience Timeline -->
+    <!-- Experience from CV -->
     <div class="training-experiences">
       <h3>Training <span class="gradient-text">Experience</span></h3>
       <div class="experience-timeline">
@@ -1199,16 +437,19 @@ footer {
         <div class="experience-item">
           <div class="exp-icon"><i class="fas fa-chalkboard-teacher"></i></div>
           <div class="exp-content">
-            <h4>Digital Skills Trainer — Community Youth Program</h4>
+            <h4>Information Technology Tutor / ICT Trainer</h4>
             <div class="exp-meta">
+              <span><i class="fas fa-building"></i> Institute of Advanced Technology (IAT)</span>
               <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
-              <span><i class="fas fa-calendar"></i> 2023 – Present</span>
+              <span><i class="fas fa-calendar"></i> January 2023 – Present</span>
             </div>
-            <p>Delivered hands-on training sessions in digital literacy, Adobe Creative Suite, and social media marketing to youth groups. Designed curriculum aligned with real-world freelancing and employment needs. Facilitated practical client simulation projects to build learner confidence.</p>
+            <p>Deliver competency-based instruction across multiple ICT disciplines including digital productivity, web development, and software engineering to diverse student cohorts. Design and continuously update ICT curriculum to reflect current industry trends. Integrate hands-on coding projects, real-world simulations, and problem-solving exercises into daily instruction. Utilise modern ed-tech tools — Google Classroom, Moodle, Replit, and GitHub Classroom — to manage coursework and enhance learner engagement. Incorporate STEM and robotics concepts to foster computational thinking. Maintain assessment records and contribute to program evaluation and reporting.</p>
             <div class="exp-outcomes">
-              <span class="outcome-tag">80+ learners</span>
-              <span class="outcome-tag">Adobe Photoshop & Illustrator</span>
+              <span class="outcome-tag">Competency-based instruction</span>
               <span class="outcome-tag">Curriculum design</span>
+              <span class="outcome-tag">Ed-tech tools</span>
+              <span class="outcome-tag">Student mentorship</span>
+              <span class="outcome-tag">STEM &amp; Robotics</span>
             </div>
           </div>
         </div>
@@ -1216,33 +457,19 @@ footer {
         <div class="experience-item">
           <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
           <div class="exp-content">
-            <h4>Web Design & Creative Tools Instructor</h4>
+            <h4>Software Development &amp; Programming Trainer</h4>
             <div class="exp-meta">
+              <span><i class="fas fa-building"></i> Educate! Kenya</span>
               <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
-              <span><i class="fas fa-calendar"></i> 2022 – 2023</span>
+              <span><i class="fas fa-calendar"></i> 2022 – 2025</span>
             </div>
-            <p>Conducted workshops on HTML/CSS basics, Figma UI design, and Canva for small business owners and students. Developed beginner-friendly training materials and assessment rubrics. Adapted teaching methods to suit learners with varying technical backgrounds.</p>
+            <p>Trained 100+ students in programming fundamentals including Python, JavaScript, and HTML/CSS, achieving high course completion and practical skills transfer rates. Designed engaging curriculum covering coding fundamentals, web application development, and software engineering principles aligned with industry standards. Adapted instruction to diverse learner backgrounds, maintaining high engagement in group and blended learning settings. Created comprehensive coding exercises, projects, and assessments that built strong learner portfolios. Updated training materials regularly to incorporate emerging technologies and evolving best practices.</p>
             <div class="exp-outcomes">
-              <span class="outcome-tag">60+ participants</span>
-              <span class="outcome-tag">Web basics & Figma</span>
-              <span class="outcome-tag">Training materials</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <div class="exp-icon"><i class="fas fa-users"></i></div>
-          <div class="exp-content">
-            <h4>Digital Marketing Trainer — SME Upskilling Workshops</h4>
-            <div class="exp-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
-              <span><i class="fas fa-calendar"></i> 2021 – 2022</span>
-            </div>
-            <p>Facilitated one-day and multi-day workshops on social media strategy, content creation, and SEO fundamentals for small business owners looking to grow their digital presence. Developed workbooks and take-home resources for continued learning.</p>
-            <div class="exp-outcomes">
-              <span class="outcome-tag">Social media strategy</span>
-              <span class="outcome-tag">SEO training</span>
-              <span class="outcome-tag">Workshop facilitation</span>
+              <span class="outcome-tag">100+ students trained</span>
+              <span class="outcome-tag">Python &amp; JavaScript</span>
+              <span class="outcome-tag">Blended learning</span>
+              <span class="outcome-tag">Learner portfolios</span>
+              <span class="outcome-tag">High completion rates</span>
             </div>
           </div>
         </div>
@@ -1250,10 +477,31 @@ footer {
       </div>
     </div>
 
+    <!-- Education from CV -->
+    <div class="education-section">
+      <h3>Education & <span class="gradient-text">Qualifications</span></h3>
+      <div class="education-grid">
+        <div class="edu-card">
+          <div class="edu-badge"><i class="fas fa-graduation-cap"></i> Degree</div>
+          <h4>Bachelor of Science in Computer Science (ICT)</h4>
+          <div class="edu-school">Machakos University, Kenya</div>
+          <div class="edu-date">September 2020 – October 2024 &nbsp;·&nbsp; Second Class Honors (Lower Division)</div>
+          <p>Coursework: Programming Languages, Software Engineering, Web Development, Database Systems, Data Structures &amp; Algorithms, Robotics, ICT Curriculum Development. Led peer tutoring sessions and organised coding workshops.</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-badge"><i class="fas fa-certificate"></i> Certification</div>
+          <h4>Professional Certification in Software Engineering</h4>
+          <div class="edu-school">Power Learn Project (Africa)</div>
+          <div class="edu-date">2024</div>
+          <p>Intensive full-stack software development programme covering modern programming practices, project-based learning, and industry-standard tools across the African tech ecosystem.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Testimonials -->
-    <div class="section-header" style="margin-top: 2rem;">
+    <div class="section-header" style="margin-top:2rem;">
       <h2>What <span class="gradient-text">Learners Say</span></h2>
-      <p>Feedback from people I've trained</p>
+      <p>Feedback from students and colleagues — replace with real quotes when available</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
@@ -1261,48 +509,46 @@ footer {
         <div class="quote-icon">"</div>
         <p>Peninah has an incredible ability to break down complex tools like Photoshop into simple, practical steps. I went from zero knowledge to creating my own brand graphics in just two weeks.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">AM</div>
-          <div class="author-info">
-            <strong>Aisha M.</strong>
-            <span>Graphic Design Workshop Participant</span>
-          </div>
+          <div class="author-avatar">S</div>
+          <div class="author-info"><strong>Student, IAT</strong><span>Creative Design Module</span></div>
         </div>
       </div>
-
       <div class="testimonial-card">
         <div class="star-rating">★★★★★</div>
         <div class="quote-icon">"</div>
-        <p>The digital marketing workshop changed how I run my business online. Peninah made SEO and social media strategy feel achievable, not overwhelming. Highly practical training.</p>
+        <p>The programming sessions were incredibly well structured. Peninah made Python feel approachable for complete beginners while still challenging those with prior experience.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">JK</div>
-          <div class="author-info">
-            <strong>James K.</strong>
-            <span>Small Business Owner</span>
-          </div>
+          <div class="author-avatar">S</div>
+          <div class="author-info"><strong>Student, Educate! Kenya</strong><span>Programming Fundamentals</span></div>
         </div>
       </div>
-
       <div class="testimonial-card">
         <div class="star-rating">★★★★★</div>
         <div class="quote-icon">"</div>
         <p>What stood out was how Peninah adapted her teaching for learners at different levels in the same room. Patient, engaging, and genuinely invested in every learner's progress.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">FO</div>
-          <div class="author-info">
-            <strong>Faith O.</strong>
-            <span>Youth Program Coordinator</span>
-          </div>
+          <div class="author-avatar">OK</div>
+          <div class="author-info"><strong>Owen Kizito</strong><span>Program Manager, Educate! Kenya</span></div>
         </div>
       </div>
     </div>
 
-    <!-- CTA -->
+    <!-- CV Banner -->
+    <div class="cv-banner">
+      <div class="cv-banner-text">
+        <h3>📄 Want the full picture?</h3>
+        <p>Download my CV for complete experience, qualifications, and professional references from IAT, Educate! Kenya, and G4S Kenya.</p>
+      </div>
+      <div class="cv-banner-actions">
+        <a href="Peninah_Mutheu_John_CV_Senior_digital_Traineer.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download CV (PDF)</a>
+        <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get In Touch</a>
+      </div>
+    </div>
+
     <div class="training-cta">
       <h3>Let's Build <span class="gradient-text">Digital Skills Together</span></h3>
       <p>Available for training engagements, curriculum development, and digital skills facilitation.</p>
-      <a href="#contact" class="btn btn-primary">
-        <i class="fas fa-paper-plane"></i> Get In Touch
-      </a>
+      <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
     </div>
 
   </div>
@@ -1313,39 +559,15 @@ footer {
   <div class="container">
     <div class="section-header">
       <h2>My <span class="gradient-text">Services</span></h2>
-      <p>What I can do for you</p>
+      <p>What I can do for you or your organisation</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-laptop-code"></i>
-        <h3>Web Development</h3>
-        <p>Building responsive, performant websites and web applications using modern technologies and best practices.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-palette"></i>
-        <h3>UI/UX Design</h3>
-        <p>Creating intuitive user interfaces and experiences that balance aesthetics with functionality.</p>
-      </div>
-      <div class="service-card">
-        <i class="fab fa-adobe"></i>
-        <h3>Graphic Design</h3>
-        <p>Designing compelling visual content including brand identities, marketing materials, and digital assets.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <h3>Digital Skills Training</h3>
-        <p>Delivering practical training in digital tools, creative software, and digital marketing for individuals and organizations.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-book-open"></i>
-        <h3>Curriculum Development</h3>
-        <p>Designing structured, competency-based training programs with materials and assessments tailored to your learners.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-search"></i>
-        <h3>SEO & Digital Marketing</h3>
-        <p>Improving online visibility and building effective digital marketing strategies for businesses of all sizes.</p>
-      </div>
+      <div class="service-card"><i class="fas fa-chalkboard-teacher"></i><h3>Digital Skills Training</h3><p>Competency-based training in digital tools, creative software, programming, and digital marketing for individuals and organisations.</p></div>
+      <div class="service-card"><i class="fas fa-book-open"></i><h3>Curriculum Development</h3><p>Designing structured, industry-aligned training programmes with lesson plans, assessments, and materials tailored to your learners.</p></div>
+      <div class="service-card"><i class="fab fa-adobe"></i><h3>Graphic Design</h3><p>Compelling visual content — brand identities, marketing materials, social media graphics, and digital assets using Adobe Suite and Canva.</p></div>
+      <div class="service-card"><i class="fas fa-laptop-code"></i><h3>Web Development</h3><p>Responsive, performant websites and web applications using modern technologies including React, PHP, and full-stack solutions.</p></div>
+      <div class="service-card"><i class="fas fa-search"></i><h3>SEO &amp; Digital Marketing</h3><p>Improving online visibility and building effective digital marketing strategies including social media, content planning, and SEO.</p></div>
+      <div class="service-card"><i class="fas fa-users"></i><h3>Mentorship &amp; Coaching</h3><p>Individualised mentorship, academic support, and skills coaching to help learners build confidence and overcome technical challenges.</p></div>
     </div>
   </div>
 </section>
@@ -1355,29 +577,29 @@ footer {
   <div class="container">
     <div class="section-header">
       <h2>Get In <span class="gradient-text">Touch</span></h2>
-      <p>Let's work together</p>
+      <p>Let's connect for training, design, or development opportunities</p>
     </div>
     <div class="contact-content">
-      <p style="color: var(--gray); font-size: 1.1rem;">Whether you need a web project built, a brand designed, or a team trained in digital skills — I'd love to hear from you.</p>
+      <p style="color:var(--gray);font-size:1.05rem;">Whether you need a digital skills trainer, a web project built, or a brand designed — I'd love to hear from you.</p>
       <div class="contact-info">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
-          <a href="mailto:peninah@example.com">peninah@example.com</a>
+          <a href="mailto:Peshy788@gmail.com">Peshy788@gmail.com</a>
         </div>
         <div class="contact-item">
           <i class="fas fa-phone"></i>
-          <a href="tel:+254700000000">+254 700 000 000</a>
+          <a href="tel:+254758912845">+254 758 912 845</a>
         </div>
         <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Nairobi, Kenya</span>
+          <span>P.O Box 134, Nairobi, Kenya</span>
         </div>
       </div>
       <div class="social-links">
-        <a href="https://github.com/peninah713" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.behance.net" target="_blank"><i class="fab fa-behance"></i></a>
-        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/peninah713" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.behance.net" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+        <a href="mailto:Peshy788@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </div>
@@ -1385,7 +607,7 @@ footer {
 
 <footer>
   <div class="container">
-    <p style="color: var(--gray);">© 2026 Peninah John. Crafted with passion & purpose.</p>
+    <p style="color:var(--gray);">© 2026 Peninah Mutheu John &nbsp;·&nbsp; Senior Digital Skills Trainer &nbsp;·&nbsp; Nairobi, Kenya</p>
   </div>
 </footer>
 
